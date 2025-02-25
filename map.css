@@ -1,3 +1,8 @@
+:root {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+}
+
 html, body {
     margin: 0;
     padding: 5;
@@ -28,8 +33,47 @@ html, body {
 }
 
 circle{
-    pointer-events: auto
+      pointer-events: auto;
+    --color: color-mix(
+      in oklch,
+      var(--color-departures) calc(100% * var(--departure-ratio)),
+      var(--color-arrivals)
+    );
+    fill: var(--color);
 }
+
+.legend {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.legend > div {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  color: black;
+  background-color: var(--color);
+}
+
+.legend > div:nth-child(1) {
+  background-color: steelblue;
+}
+
+.legend > div:nth-child(2) {
+  background-color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+}
+
+.legend > div:nth-child(3) {
+  background-color: darkorange;
+}
+
 
 .title {
     font-family: 'Arial', sans-serif;

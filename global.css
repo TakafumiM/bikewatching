@@ -10,13 +10,6 @@ body {
     font-family: sans-serif;
 }
 
-header {
-    display: flex;
-    gap: 1em;
-    align-items: baseline;
-    margin-bottom: 1em;
-}
-
 header label {
     margin-left: auto;
 }
