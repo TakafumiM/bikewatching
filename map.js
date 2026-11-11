@@ -1,7 +1,7 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
 // Set your Mapbox access token here
-mapboxgl.accessToken = 'pk.eyJ1IjoidGFrYWZ1bWltIiwiYSI6ImNtN2RucGxsbzA1bHkybHB2ZTg0ZXozdW4ifQ._GEflQrYR_5mfbGcKcdejg';
+mapboxgl.accessToken = 'pk.eyJ1IjoidGFrYWZ1bWltIiwiYSI6ImNtd2JzbmRybzAyZjIyeHNmeWh2aHVydmEifQ.vrEGl-15c5tfAzlJZaarYA';
 
 // Initialize the map
 const map = new mapboxgl.Map({
@@ -16,7 +16,7 @@ const map = new mapboxgl.Map({
 map.on('load', async () => {
   map.addSource('boston_route', {
     type: 'geojson',
-    data: 'https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::existing-bike-network-2022.geojson?...'
+    data: './Existing_Bike_Network_2022.geojson'
   });
 
   map.addSource('cambridge_route', {
